@@ -1,0 +1,18 @@
+# defaults
+language: node_js
+node_js: '12'
+
+install: npm ci --ignore-scripts
+
+# keep the npm cache around to speed up installs
+cache:
+  directories:
+    - ~/.npm # cache npm's cache
+jobs:
+  include:
+    - script: npm test
+      after_success: npm run coveralls
+    - stage: integration-test
+      script: npm run integration-test
+    - stage: lint
+      script: npm run lint

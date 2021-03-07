@@ -1,0 +1,69 @@
+{
+  "name": "@fenghuang/loadavg",
+  "version": "0.0.1",
+  "description": "Count calls per second and compute averages",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint",
+    "lint-staged": "lint-staged"
+  },
+  "nyc": {
+    "all": true,
+    "cache": true,
+    "reporter": [
+      "html",
+      "text"
+    ],
+    "include": [
+      "lib/**/*",
+      "index.js"
+    ],
+    "exclude": [
+      "lib/console.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fenghuang-js/loadavg.git"
+  },
+  "keywords": [
+    "load",
+    "average",
+    "loadavg",
+    "cps",
+    "bpm"
+  ],
+  "author": "Michaël St-Georges <m.stgeorges@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/fenghuang-js/loadavg/issues"
+  },
+  "homepage": "https://github.com/fenghuang-js/loadavg#readme",
+  "devDependencies": {
+    "chai": "^4.3.3",
+    "chai-as-promised": "^7.1.1",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.21.0",
+    "eslint-plugin-json": "^2.1.2",
+    "lint-staged": "^10.5.4",
+    "mocha": "^8.3.1",
+    "nyc": "^15.1.0",
+    "pre-commit": "^1.2.2",
+    "sinon": "^9.2.4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "pre-commit": [
+    "lint-staged"
+  ]
+}
