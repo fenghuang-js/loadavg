@@ -1,16 +1,18 @@
-# defaults
 language: node_js
 node_js: '12'
-
 install: npm ci --ignore-scripts
-
-# keep the npm cache around to speed up installs
 cache:
   directories:
-    - ~/.npm # cache npm's cache
+  - "~/.npm"
 jobs:
   include:
-    - stage: lint
-      script: npm run lint
-    - stage: publish
-      script: npm publish
+  - stage: lint
+    script: npm run lint
+deploy:
+  provider: npm
+  email: m.stgeorges@csl-technologies.com
+  api_key:
+    secure: eedj23uhxKEEuFOxV7T2yLJ811rMt5MDBPtXBf5h2gXgVQ02OCUqfkF+WuIpNnuDCWudwr/KvEXn3/MRHqUUoFnSDnTr1s/quiIzh9yt2D8LyxwxPjlCyBERRRtd0Ybhakvfv+3MB9uV1HMiECfI2Aj9Nl+LTTS+JyUT59o+Wx377lc7NebBqf4euoyie1Yj10KA4FZkavUS3QNYqVoKD10evMdv/wkcmCgYwAui3oc7qOl0X1No+fzPoS8b/o8qJmcKsdilVfqlYfqvVlXnQL4qPL0yRBsvT+V1zirOwpf6x419qXMhuhiV/Q4p1vi+W6uvMi3t1jIU8i6KxGbi9lUr2fqNUscXqHL6YjbFpciOT5z12TWbWR9nloOajgiRKA1H2KSfITUOcU/yiNvKtlY3yxnDBeKFEF+cOY+pOYO8BUW5NKfFCozXl706MCJeyOrAzwPUCv429FS4jy5P93gdZhL+0TQsmmm1pBP5BClfniLclbO9RFGzLBLMNzx6dLs9FNe+yYA3te9WqvMQj5Refhftc7pU0Gk0e9nI5ODlh6AP+XCP6ITsmhMZ+EPMQHJV+BbpEZaw5EhKsXnTZEGvyFzjLSDHTrgzc+CzGD09yRAsl5IDbHByH1O0vfEaHfbTxsg3YsbEO8ztOEPqScDGX88HZQLN0+C3itqqeI8=
+  on:
+    repo: fenghuang-js/loadavg
+  skip_cleanup: 'true'

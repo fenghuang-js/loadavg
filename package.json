@@ -1,6 +1,9 @@
 {
   "name": "@fenghuang/loadavg",
   "version": "0.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Count calls per second and compute averages",
   "main": "lib/index.js",
   "scripts": {
