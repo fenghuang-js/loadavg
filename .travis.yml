@@ -10,9 +10,7 @@ cache:
     - ~/.npm # cache npm's cache
 jobs:
   include:
-    - script: npm test
-      after_success: npm run coveralls
-    - stage: integration-test
-      script: npm run integration-test
     - stage: lint
       script: npm run lint
+    - stage: publish
+      script: npm publish
