@@ -6,6 +6,9 @@
     "plugins": [
         "json"
     ],
+    "parserOptions": {
+        "ecmaVersion": 10
+    },
     "extends": "eslint:recommended",
     "rules": {
         "indent": [

@@ -1,12 +1,12 @@
 {
   "name": "@fenghuang/loadavg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Count calls per second and compute averages",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "nyc mocha",
+    "test": "echo \"No tests defined\"",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint",
+    "lint": "eslint .",
     "lint-staged": "lint-staged"
   },
   "nyc": {
@@ -65,5 +65,8 @@
   },
   "pre-commit": [
     "lint-staged"
-  ]
+  ],
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
 }
