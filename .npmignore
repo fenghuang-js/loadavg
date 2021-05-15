@@ -1,0 +1,5 @@
+.coveralls.yml
+.travis.yml
+.eslintrc.json
+travis.log
+

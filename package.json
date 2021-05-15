@@ -1,5 +1,5 @@
 {
-  "name": "@fenghuang/loadavg",
+  "name": "@fenghuang-js/loadavg",
   "version": "0.0.3",
   "publishConfig": {
     "access": "public"
